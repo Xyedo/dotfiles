@@ -1,2 +1,3 @@
 - link:
     $HOME/.zshrc: pkg/zsh/zshrc
+    $HOME/.config/zsh: pkg/zsh/custom

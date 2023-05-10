@@ -105,9 +105,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+
+## $ZSH - useful for reference in script
+export ZSH="$HOME/.config/zsh"
+## Source helper, only source when file exists
+src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
+
+src $ZSH/aliases.zsh
+
+
 export PATH="$PATH:/usr/local/go/bin:/home/xyedo/go/bin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/.local/bin"
+
 _makefile_targets()
 {
   local cur=${COMP_WORDS[COMP_CWORD]}
