@@ -5,7 +5,7 @@
 ##  prefix it with backslash (\)
 ##  eg. \ls, \rm -rf
 alias rm="trash"
-alias apt="nala"
-alias apt-get="nala"
+alias apt="sudo nala"
+alias apt-get="sudo nala"
 alias ls="exa --icons"
 alias cat="ccat"
