@@ -75,6 +75,7 @@ plugins=(
 	colored-man-pages
 	colorize
 	command-not-found
+  golang
 )
 
 source $ZSH/oh-my-zsh.sh
