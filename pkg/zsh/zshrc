@@ -76,6 +76,7 @@ plugins=(
 	colorize
 	command-not-found
   golang
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
