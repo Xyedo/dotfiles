@@ -77,6 +77,8 @@ plugins=(
 	command-not-found
   golang
   kubectl
+  ddosify
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
