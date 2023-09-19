@@ -80,6 +80,7 @@ plugins=(
   ddosify
   rust
   zsh-syntax-highlighting
+  git-auto-fetch
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,10 +120,19 @@ src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
 
 src $ZSH/aliases.zsh
 
+# bun completions
+[ -s "/home/xyedo/.bun/_bun" ] && src "/home/xyedo/.bun/_bun"
 
+
+# go
 export PATH="$PATH:/usr/local/go/bin:/home/xyedo/go/bin"
+
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/.local/bin"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 _makefile_targets()
 {
