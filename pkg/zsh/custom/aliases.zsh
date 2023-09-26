@@ -12,9 +12,28 @@ alias cat="ccat"
 alias gpo="git pull origin"
 
 kubevsms2 () {
-  kubectl port-forward -n vsms-v2-development $(kubectl get pods -n vsms-v2-development | grep 'vsms2-rest-api' | awk '{print $1}') 3001:3000
+  port=$1
+  if [[ -z "$port" ]]; then
+    port=3001
+  fi
+  kubectl port-forward -n vsms-v2-development $(kubectl get pods -n vsms-v2-development | grep 'vsms2-rest-api' | awk '{print $1}') "$port":3000
 }
 
 kubeorder () {
-  kubectl port-forward -n platform-development $(kubectl get pods -n platform-development | grep 'order' | awk '{print $1}') 3000:3000
+  port=$1
+  if [[ -z "$port" ]]; then
+    port=3001
+  fi
+
+  kubectl port-forward -n platform-development $(kubectl get pods -n platform-development | grep 'order' | awk '{print $1}') "$port":3000
+}
+
+kubefleetplanning () {
+  port=$1
+  if [[ -z "$port" ]]; then
+    port=3001
+  fi
+
+  kubectl port-forward -n platform-development $(kubectl get pods -n platform-development | grep 'fleet-planning' | awk '{print $1}') "$port":3000
+
 }
