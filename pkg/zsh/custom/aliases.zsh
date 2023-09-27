@@ -37,3 +37,13 @@ kubefleetplanning () {
   kubectl port-forward -n platform-development $(kubectl get pods -n platform-development | grep 'fleet-planning' | awk '{print $1}') "$port":3000
 
 }
+
+kubedb () {
+  port=$1
+  if [[ -z "$port" ]]; then
+    port=3001
+  fi
+
+  kubectl port-forward -n platform-development $(kubectl get pods -n platform-development | grep 'platform-db' | awk '{print $1}') "$port":5432
+
+}
