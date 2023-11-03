@@ -477,7 +477,9 @@ font:
 shell:
   program: /bin/zsh
   args:
-    - --login
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 # Startup directory
 #
