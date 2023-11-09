@@ -16,7 +16,7 @@ kubevsms2 () {
   if [[ -z "$port" ]]; then
     port=3001
   fi
-  kubectl port-forward -n vsms-v2-development $(kubectl get pods -n vsms-v2-development | grep 'vsms2-rest-api' | awk '{print $1}') "$port":3000
+  kubectl port-forward -n vsms-v2-development $(kubectl get pods -n vsms-v2-development | grep 'vsms2-rest-api' | head -n1 | awk '{print $1}') "$port":3000
 }
 
 kubeorder () {
