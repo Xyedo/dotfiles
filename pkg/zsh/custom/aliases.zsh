@@ -10,6 +10,8 @@ alias apt-get="sudo nala"
 alias ls="exa --icons"
 alias cat="ccat"
 alias gpo="git pull origin"
+alias k9svsms="k9s -c pods -n vsms-v2-development"
+alias k9splatform="k9s -c pods -n platform-development"
 
 kubevsms2 () {
   port=$1
