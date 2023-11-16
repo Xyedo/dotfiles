@@ -119,6 +119,7 @@ export ZSH="$HOME/.config/zsh"
 src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
 
 src $ZSH/aliases.zsh
+src $ZSH/k9s.zsh
 
 # bun completions
 [ -s "/home/xyedo/.bun/_bun" ] && src "/home/xyedo/.bun/_bun"
