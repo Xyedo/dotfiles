@@ -479,7 +479,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux"
+    - "tmux attach -t $(tmux ls | grep -v 'attached' | head -n1 | awk '{print substr($1,0,1)}') || tmux"
 
 # Startup directory
 #
