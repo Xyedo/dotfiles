@@ -81,6 +81,7 @@ plugins=(
   rust
   zsh-syntax-highlighting
   git-auto-fetch
+  minikube
 )
 
 source $ZSH/oh-my-zsh.sh
