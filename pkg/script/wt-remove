@@ -1,0 +1,36 @@
+#!/bin/env bash
+
+# Colors
+_red() { echo -e "\e[31m$1\e[0m"; }
+_green() { echo -e "\e[32m$1\e[0m"; }
+_gray() { echo -e "\e[90m$1\e[0m"; }
+_blue() { echo -e "\e[34m$1\e[0m"; }
+
+target_dir="$1"
+
+if [[ -z "$target_dir" ]]; then
+	echo "Missing target directory"
+	echo -e "Usage:"
+	echo -e "\t$(basename "$0") <target-dir>"
+	exit 1
+fi
+
+
+# if target-dir name contains a double underscore, convert them to slash
+branch="${target_dir##*/}"
+branch="${branch//__//}"
+
+if ! git worktree list | grep -q "$branch"; then 
+  echo "branch '$(_red "$branch")' is not exists"
+	exit 1
+fi
+
+
+if ! [[ -d "$target_dir" ]]; then
+	echo "Target directory '$(_red "$target_dir")' is not exists"
+	exit 1
+fi
+
+sudo rm -rdf "$target_dir"
+git worktree prune
+git branch -D "$branch"

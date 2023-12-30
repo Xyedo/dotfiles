@@ -1,2 +1,2 @@
 - link:
-    $HOME/.tmux.conf: pkg/tmux/tmux.conf 
+    $HOME/.tmux.conf: pkg/tmux/tmux.conf

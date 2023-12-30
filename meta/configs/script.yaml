@@ -1,0 +1,4 @@
+- link:
+    $HOME/.local/bin:
+      glob: true
+      path: pkg/script/*
