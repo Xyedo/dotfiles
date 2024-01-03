@@ -146,3 +146,5 @@ complete -F _makefile_targets makefile
 
 eval "$(starship init zsh)"
 eval "$(jump shell zsh)"
+
+export PATH=$PATH:/home/xyedo/.spicetify
