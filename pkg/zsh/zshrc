@@ -82,6 +82,7 @@ plugins=(
   zsh-syntax-highlighting
   git-auto-fetch
   minikube
+  asdf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,12 +126,14 @@ src $ZSH/k9s.zsh
 # bun completions
 [ -s "/home/xyedo/.bun/_bun" ] && src "/home/xyedo/.bun/_bun"
 
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # go
 export PATH="$PATH:/usr/local/go/bin:/home/xyedo/go/bin"
 
-export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:$HOME/.local/bin"
+# rust
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
