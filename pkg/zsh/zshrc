@@ -139,6 +139,13 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+#spicetify
+export PATH=$PATH:/home/xyedo/.spicetify
+
+# android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator:$$ANDROID_HOME/platform-tools
+
 _makefile_targets()
 {
   local cur=${COMP_WORDS[COMP_CWORD]}
@@ -150,4 +157,3 @@ complete -F _makefile_targets makefile
 eval "$(starship init zsh)"
 eval "$(jump shell zsh)"
 
-export PATH=$PATH:/home/xyedo/.spicetify
