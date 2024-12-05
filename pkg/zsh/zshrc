@@ -146,6 +146,9 @@ export PATH=$PATH:/home/xyedo/.spicetify
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator:$$ANDROID_HOME/platform-tools
 
+#cpp
+export PATH=$PATH:/home/xyedo/cpp/vcpkg
+
 _makefile_targets()
 {
   local cur=${COMP_WORDS[COMP_CWORD]}
@@ -157,3 +160,9 @@ complete -F _makefile_targets makefile
 eval "$(starship init zsh)"
 eval "$(jump shell zsh)"
 
+
+# asdf
+autoload -U +X bashcompinit && bashcompinit
+
+# asdf completions
+complete -o nospace -C /usr/bin/vault vault
