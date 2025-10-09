@@ -77,7 +77,6 @@ plugins=(
 	command-not-found
   golang
   kubectl
-  ddosify
   rust
   zsh-syntax-highlighting
   git-auto-fetch
@@ -124,13 +123,13 @@ src $ZSH/aliases.zsh
 src $ZSH/k9s.zsh
 
 # bun completions
-[ -s "/home/xyedo/.bun/_bun" ] && src "/home/xyedo/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && src "$HOME/.bun/_bun"
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
 # go
-export PATH="$PATH:/usr/local/go/bin:/home/xyedo/go/bin"
+export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -140,14 +139,17 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 #spicetify
-export PATH=$PATH:/home/xyedo/.spicetify
+export PATH=$PATH:$HOME/.spicetify
 
 # android
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator:$$ANDROID_HOME/platform-tools
 
+#asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 #cpp
-export PATH=$PATH:/home/xyedo/cpp/vcpkg
+export PATH=$PATH:$HOME/cpp/vcpkg
 
 _vcpkg_completions()
 {
