@@ -14,6 +14,12 @@ alias k9svsms="k9s -c pods -n vsms-v2-development"
 alias k9splatform="k9s -c pods -n platform-development"
 alias ggraph="git log --graph --oneline"
 
+
+
+kcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
 kubevsms2 () {
   port=$1
   if [[ -z "$port" ]]; then
