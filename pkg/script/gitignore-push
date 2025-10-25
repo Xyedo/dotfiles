@@ -18,5 +18,4 @@ fi
 echo "[AUTO-SYNC] $REPO_ROOT → $REMOTE_NAME/$RELATIVE_PATH"
 
 echo "$IGNORED_FILES" | \
-rclone sync "$REPO_ROOT" "$REMOTE_NAME/$RELATIVE_PATH" \
-  --files-from - \
+rclone copy "$REPO_ROOT" "$REMOTE_NAME/$RELATIVE_PATH" --files-from -
