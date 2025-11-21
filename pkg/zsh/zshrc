@@ -150,7 +150,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator:$$ANDROID_HOME/platform-tools
 
 #cpp
 export PATH=$PATH:$HOME/cpp/vcpkg
-export PATH=$PATH:$HOME/cpp/cmake-4.2.0-linux-x86_64/bin
 export PATH=$PATH:$VCPKG_ROOT
 
 #asdf
