@@ -10,7 +10,7 @@ git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
 REPO_ROOT=$(git rev-parse --show-toplevel)
 RELATIVE_PATH="${REPO_ROOT#"$HOME/"}"
 
-IGNORED_FILES=$(git ls-files -i -o --exclude-standard | grep -v "^node_modules/" | grep -v "^dist/" | grep -v "^build/" | grep -v "^target/")
+IGNORED_FILES=$(git ls-files -i -o --exclude-standard | grep -v "^node_modules/" | grep -v "^dist/" | grep -v "^build/" | grep -v "^target/" | grep -v "^venv")
 if [ -z "$IGNORED_FILES" ]; then
     echo "No ignored directories found — nothing to sync."
     exit 0
